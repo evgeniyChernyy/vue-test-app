@@ -1,0 +1,211 @@
+html{
+    font-size: calc(16 + (16 - 11) * ((100vw - 1025px) / (1920 - 1025)));
+    --grey: #e6e9e9;
+    --theme-blue: #15bfb4;
+    --dark-grey: #6e6e6e;
+    --block-box-shadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --block-border-radius:1.5rem;
+}
+*{
+    font-family: "Roboto Thin", sans-serif;
+}
+body{
+    background: var(--grey);
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.page{
+    width: 100%;
+}
+.full-height{
+    min-height: 100vh;
+}
+/* forms */
+.form-container{
+    box-shadow: var(--block-box-shadow);
+    border-radius: var(--block-border-radius);
+    padding: 2rem;
+    background: white;
+}
+.form-container__label{
+    margin-bottom: .7rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    color:var(--dark-grey);
+}
+.form-container__input{
+    margin-bottom: 1.4rem;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    width: 100%;
+    height: 2rem;
+}
+.form-container__btn{
+    border: none;
+    background-color: var(--theme-blue);
+    color: white;
+    border-radius: 2rem;
+    width: 10rem;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+.form-container__btn:hover{
+    background-color: #119c93;
+}
+/*  chat messages  */
+.chat-message{
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: var(--block-border-radius);
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+    transition: border-color .3s;
+}
+.chat-message:hover{
+    border-color: black;
+}
+.chat-message__author{
+    margin-bottom: 10px;
+}
+/* header */
+.header{
+    width: 100%;
+    position: absolute;
+}
+/* authorization page */
+.auth-form-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth-form-container{
+    width: 30rem;
+    text-align: center;
+    padding: 3rem 4rem;
+}
+/* info popup  */
+.info-popup{
+    background-color: white;
+    position: fixed;
+    top: 2rem;
+    right: 4rem;
+    width: 25rem;
+    padding: 1.4rem;
+    color: var(--dark-grey);
+    box-shadow: var(--block-box-shadow);
+    border-radius: var(--block-border-radius);
+    transform: translate3d(0px, -1rem, 0px);
+    opacity: 0;
+    transition: opacity .3s ease, transform .3s ease;
+}
+.info-popup.active{
+    transform: none;
+    opacity: 1;
+}
+/*  account page  */
+.account-block{
+    display: flex;
+    /*justify-content: space-between;*/
+    padding-top: 7.25rem;
+    padding-bottom: 4rem;
+}
+.user-profile{
+    color: var(--dark-grey);
+    box-shadow: var(--block-box-shadow);
+    border-radius: var(--block-border-radius);
+    padding: 2rem;
+    margin-right: 8%;
+    flex-basis: 20%;
+}
+.user-msgs{
+    color: var(--dark-grey);
+    box-shadow: var(--block-box-shadow);
+    border-radius: var(--block-border-radius);
+    flex-basis: 70%;
+    padding: 2rem;
+}
+.user-profile__avatar-cont{
+    margin-bottom: 4rem;
+}
+.user-profile__avatar{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-profile__user-name,
+.user-profile__user-role,
+.user-profile__user-reg-date{
+    color: var(--dark-grey);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+.user-profile__user-role{
+    font-size: 1rem;
+    margin-top: -1rem;
+}
+.user-profile__reputation-star{
+    width: 16px;
+    position: relative;
+    top: 2px;
+}
+.user-msgs__heading{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+@media (max-width: 1024px){
+    .user-profile {
+        margin-right: 3%;
+        flex-basis: 32%;
+    }
+    .user-msgs{
+        flex-basis: 65%;
+    }
+}
+@media (max-width: 1024px) and (orientation: landscape){
+    .user-profile {
+        margin-right: 4%;
+        flex-basis: 24%;
+    }
+}
+@media (max-width: 767px){
+    .auth-form-container {
+        width: 100%;
+        padding: 10vw 11vw;
+    }
+    .form-container__label{
+        font-size: 6vw;
+    }
+    .form-container__input {
+        margin-bottom: 8vw;
+    }
+    .account-block{
+        flex-wrap: wrap;
+    }
+    .user-profile {
+        flex-basis: 100%;
+        margin-bottom: 10vw;
+    }
+    .user-msgs{
+        flex-basis: 100%;
+    }
+    .user-profile__user-name, .user-profile__user-role, .user-profile__user-reg-date{
+        margin-bottom: 6vw;
+    }
+    .user-profile__avatar {
+        width: 40vw;
+        height: 40vw;
+    }
+    .user-profile__avatar-cont{
+        margin-bottom: 6vw;
+    }
+    .user-msgs__heading {
+        font-size: 8vw;
+    }
+}

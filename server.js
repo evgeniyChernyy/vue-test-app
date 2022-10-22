@@ -22,17 +22,21 @@ app.post("/login", function(req,res){
 
 	if (req.body.email === "evgeniy@mail.com" && req.body.password === "123456^&*"){
 		res.json({
+			name: "Evgeniy Chernyy",
 			regDate: "10.09.2020",
 			role: "admin",
 			reputation: 1023,
-			avatar:"/evgeniy.jpg",
+			avatar:"evgeniy.jpg",
 			messages:[{
+				id: 1231,
 				from: "Arthur Kane",
 				msg: "Hello Evgeniy, how are you doing?"
 			},{
+				id: 12545431,
 				from: "Marry Ostin",
 				msg: "Congratulations Evgeniy! I wish you good luck with your new job!"
 			},{
+				id: 324,
 				from: "Mom",
 				msg: "You forgot to turn off the fan again..."
 			}]
