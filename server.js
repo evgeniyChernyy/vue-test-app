@@ -1,7 +1,7 @@
 const express = require('express')
 const formData = require("express-form-data");
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(formData.parse())
 app.use(formData.format());
@@ -14,8 +14,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/dist' + "/index.html")
+app.use(express.static(__dirname + "/dist/"))
+
+app.get('*', function (req, res) {
+  res.sendFile(__dirname + '/dist/' + "index.html")
 })
 
 app.post("/login", function(req,res){

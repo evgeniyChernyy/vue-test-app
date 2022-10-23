@@ -26,7 +26,7 @@
         methods:{
             async sendForm(){
                 if(!document.forms.authForm.email.value || !document.forms.authForm.password.value) {
-                    alert("Empty data!")
+                    this.$emit("showPopup","Please enter email and password")
                     return;
                 }
 
@@ -40,7 +40,7 @@
 
                 } catch(e){
                     if(e.response.status === 401){
-                        this.$emit("showPopup","The email address or password is incorrect.")
+                        this.$emit("showPopup","The email address or password is incorrect")
                     }
                 }
 
