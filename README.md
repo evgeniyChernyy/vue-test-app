@@ -1,24 +1,36 @@
-# vue-authorization-task
+## LOCAL DEVELOPMENT
 
-## Project setup
+## Setup project
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run server
+```
+node server.js
+```
+
+### Compile for development
 ```
 npm run serve
 ```
+The application will be available at the URL specified in the message
 
-### Compiles and minifies for production
+
+## DEPLOY ON REAL SERVER
+
+### Setup project
+```
+npm install
+```
+
+### Build frontend
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Run server
 ```
-npm run lint
+node server.js
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
